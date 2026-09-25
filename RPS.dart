@@ -1,6 +1,7 @@
 import "dart:io";
 
-const List<String> RPS = ["rock", "paper", "scissors"];
+/// Rock Paper Scissor Game with 2 Player Mode
+const List<String> RPS = ["rock", "paper", "scissors"]; // This serve as container for the picks for the game
 
 
 ///Main Interface of the Program
@@ -72,7 +73,7 @@ void main() {
 
 }
 
-
+///This function is used to get a name from the players
 String getPlayerName(String player) {
   stdout.write("Enter $player name: ");
   String? ngalanIO = stdin.readLineSync();
@@ -84,7 +85,7 @@ String getPlayerName(String player) {
   return ngalanIO.trim(); // For removing whitespaces on the input
 }
 
-
+///This function is for the validation of the picks of the players
 String? validatePick(String? pick) {
   if (pick == null) return null;
 
@@ -95,7 +96,7 @@ String? validatePick(String? pick) {
   return null;
 }
 
-
+///This function serves as to get the picks of the players and validate it with the validation function
 String getPick(String player) {
   while (true) {
     stdout.write("$player, enter your choice: ");
@@ -112,6 +113,7 @@ String getPick(String player) {
  
 }
 
+///This function is used to decide who is the winner
 String? WhoIsTheWinner(String player1, String player2, String player1Pick, String player2Pick) {
   if (player1Pick == player2Pick) {
     return null;
